@@ -1,0 +1,5 @@
+<h1>calendar</h1>
+<% day_of_week = @time_now.strftime("%w") %>
+<%= calendar(day_of_week) %>
+
+Today is <%= @time_now.strftime("%a %d/%m/%Y")%>
