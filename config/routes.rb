@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/post_show'
+
   get 'user/show'
 
   get 'pages/home'
