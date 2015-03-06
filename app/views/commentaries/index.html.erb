@@ -1,0 +1,16 @@
+<main>
+
+<%= render partial: 'shared/aside'%>
+  <article>
+    
+    <% @aside_navigation.each do |item| %>
+      <p><%= link_to item.title, show_path(item) %></p>
+    <% end %>
+  </article>
+
+  <div class='clear'></div>
+
+</main>
+
+<h1>Commentaries#index</h1>
+<p>Find me in app/views/commentaries/index.html.erb</p>
