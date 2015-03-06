@@ -5,7 +5,7 @@ class PagesController < ApplicationController
 
   def calendar
     @time_now = Time.now
-    @month = 3
+    @month = 1
     @year = 2015
   end
 
