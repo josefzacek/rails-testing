@@ -7,17 +7,25 @@ module PagesHelper
     end
   end
 
-  def calendar(day_of_week)
+  def calendar(year, month)
+    current_date = Date.new(year, month)
+    day_of_week = current_date.strftime('%w').to_i
     days = %w(Mon Tue Wed Thu Fri Sat Sun)
     cal = '<table border="1"><tr>'
     days.each do |day|
       cal += "<td> #{day} </td>"
     end
+
     cal += '</tr><tr>'
-    day_of_week.to_i.next.times do
-      cal += '<th>&nbsp;</th>'
+    day_of_week.times do
+      cal += '<td>&nbsp;</td>'
     end
-    cal += '</tr></table>'
-    cal.html_safe
+
+    (7 - day_of_week).times do |day|
+      cal += "<td>#{day + 1}</td>"
+    end
+
+    cal += '</tr>'
+    cal += '</table>'
   end
 end

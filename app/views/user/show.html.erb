@@ -1,0 +1,21 @@
+<h1>User#show</h1>
+<p>Find me in app/views/user/show.html.erb</p>
+
+
+<table>
+    <tr>
+      <td>ID</td>
+      <td>name</td>
+      <td>age</td>
+      <td>no of posts</td>
+    </tr>
+  <% @all_users.each do |user| %>
+    <tr>
+      <td><%= user.id %></td>
+      <td><%= user.name %></td>
+      <td><%= user.age %></td>
+      <td><%= link_to user.posts.count, posts_show_users_posts_path(user_id: user.id) %></td>
+    </tr>
+  <% end %>
+
+</table>

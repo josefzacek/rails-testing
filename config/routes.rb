@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'posts/post_show'
+  get 'posts/show_users_posts'
+
+  resources :posts
+
+  get 'user/show'
+
   get 'pages/home'
 
   get 'pages/about_us'
