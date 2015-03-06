@@ -1,0 +1,9 @@
+<h1>Show users posts</h1>
+
+<% @user_posts.each do |post| %>
+    <p>Post id: <%= post.id %></p>
+    <p>Title: <%= post.title %></p>
+    <p>Article: <%= post.article %></p>
+    <p>User id: <%= post.user_id %></p>
+    <hr/>
+<% end %>

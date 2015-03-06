@@ -1,4 +1,21 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
-<%= @all_posts %>
+<table>
+    <tr>
+      <td>Title</td>
+      <td>Article</td>
+      <td>User ID</td>
+      <td>User name</td>
+    </tr>
+  <% @all_posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.article %></td>
+      <td><%= post.user_id %></td>
+      <td><%= post.user.name %></td>
+      <td><b><%= link_to "Show all #{post.user.name} posts", posts_show_users_posts_path(user_id: post.user_id) %></b></td>
+    </tr>
+  <% end %>
+
+</table>
