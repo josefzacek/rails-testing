@@ -2,9 +2,10 @@
 
 <%= render partial: 'shared/aside'%>
   <article>
+    <%= link_to 'create new commentary', new_commentary_path %>
     
     <% @aside_navigation.each do |item| %>
-      <p><%= link_to item.title, show_path(item) %></p>
+      <p><%= link_to item.title, commentary_path(item) %></p>
     <% end %>
   </article>
 
