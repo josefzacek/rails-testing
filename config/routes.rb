@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
-  get 'commentaries/index'
-
-  get 'commentaries/show'
-
-  get 'commentaries/:id' => 'commentaries#show', :as => 'show'
+  resources :commentaries
 
   get 'posts/post_show'
   get 'posts/show_users_posts'

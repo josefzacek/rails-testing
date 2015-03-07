@@ -1,7 +1,7 @@
 <aside>
   <ul>    
     <% @aside_navigation.each do |item| %>
-      <li><%= link_to item.title, show_path(item) %></li>
+      <li><%= link_to "- #{item.title} #{item.position}" , commentary_path(item) %></li>
     <% end %>
   </ul>
 </aside>
