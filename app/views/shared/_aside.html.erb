@@ -1,7 +1,21 @@
 <aside>
   <ul>    
     <% @aside_navigation.each do |item| %>
-      <li><%= link_to "- #{item.title} #{item.position}" , commentary_path(item) %></li>
+      <li><%= link_to "- #{item.title} #{item.position} id:#{item.id} " , commentary_path(item) %>
+        
+        <% if @sections.present? %>
+        <ul>
+          <% @sections.each do |link| %>
+            <% if item.id == link.commentary_id%>
+            <li><%= link_to link.title, section_path(link.id) %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </li>
+      <% end %>
+
+
+
     <% end %>
   </ul>
 </aside>

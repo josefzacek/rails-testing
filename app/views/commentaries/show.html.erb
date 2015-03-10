@@ -2,7 +2,13 @@
   <%= render partial: 'shared/aside'%>
   <article>
     
-  <%= @content.position %>
+  <p>Position: <%= @content.position %></p>
+
+  <% @sections.each do |link| %>
+    <h3><%= link_to link.title, section_path(link.id) %></h3>
+  <% end %>
+
+
 
 
   <p><%= link_to 'Edit',{ :action => 'edit', :id => @content.id }  %></p>

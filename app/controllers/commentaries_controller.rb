@@ -7,6 +7,7 @@ class CommentariesController < ApplicationController
   def show
     @aside_navigation = Commentary.order(:position)
     @content = Commentary.find(params[:id])
+    @sections = @content.sections.order(:position)
   end
 
   def new
