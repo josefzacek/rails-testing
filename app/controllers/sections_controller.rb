@@ -8,11 +8,13 @@ class SectionsController < ApplicationController
 
   def show
     @aside_navigation = Commentary.order(:position)
-    @section = Section.find(params[:id])
+    @content = Section.find(params[:id])
+    @sections = Section.where(commentary_id: @content.commentary_id).order(:position)
   end
 
   def new
     @section = Section.new
+    @all_commentary = Commentary.order(:position)
   end
 
   def create
@@ -29,6 +31,12 @@ class SectionsController < ApplicationController
   end
 
   def update
+    @section = Section.find(params[:id])
+    if @section.update(section_params)
+      redirect_to @section
+    else
+      render 'edit'
+    end
   end
 
   def destroy

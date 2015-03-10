@@ -20,22 +20,25 @@
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
+  
+    <p>
+    <%= f.label :commentary_id %><br>
+    <%= f.select :commentary_id, options_from_collection_for_select(Commentary.all, "id", "title"), {prompt: 'Select Commentary'} %>
+  </p>
  
   <p>
     <%= f.label :position %><br>
     <%= f.text_field :position %>
   </p>
 
-  <p>t
+  <p>
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </p>
 
-  <p>
-    <%= f.label :commentary_id %><br>
-    <%= f.text_field :commentary_id %>
-  </p>
- 
+  
+
+
   <p>
     <%= f.submit %>
   </p>

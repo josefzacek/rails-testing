@@ -5,14 +5,14 @@
   <article>
     
 
-    <p>Position: <%= @section.position %></p>
-    <p><%= @section.title %></p>
-    <p><%= @section.content %></p>
-    <p><%= @section.commentary_id %></p>
+    <p>Position: <%= @content.position %></p>
+    <p><%= @content.title %></p>
+    <p><%= @content.content %></p>
+    <p><%= @content.commentary_id %></p>
 
-  <p><%= link_to 'Edit',{ :action => 'edit', :id => @section.id }  %></p>
+  <p><%= link_to 'Edit',{ :action => 'edit', :id => @content.id }  %></p>
 
-  <p><%= link_to 'Destroy', section_path(@section), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  <p><%= link_to 'Destroy', section_path(@content), method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </article>
 
   <div class='clear'></div>
