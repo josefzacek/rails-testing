@@ -1,14 +1,13 @@
+<h1>Listing sections</h1>
 
-<h1>Commentaries#index</h1>
 <main>
 
 <%= render partial: 'shared/aside'%>
   <article>
-
     <%= link_to 'create new commentary', new_commentary_path %> / <%= link_to 'create new section', new_section_path %>
     
-    <% @aside_navigation.each do |item| %>
-      <p><%= link_to item.title, commentary_path(item) %></p>
+    <% @section.each do |item| %>
+      <p><%= link_to item.title, section_path(item) %></p>
     <% end %>
   </article>
 

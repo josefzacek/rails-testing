@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  #get 'sections/show' #, path: 'commentaries/sections'
+
+  resources :sections
+
   resources :commentaries
 
   get 'posts/post_show'

@@ -1,0 +1,20 @@
+<h1>Sections#show</h1>
+
+<main>
+  <%= render partial: 'shared/aside'%>
+  <article>
+    
+
+    <p>Position: <%= @content.position %></p>
+    <p><%= @content.title %></p>
+    <p><%= @content.content %></p>
+    <p><%= @content.commentary_id %></p>
+
+  <p><%= link_to 'Edit',{ :action => 'edit', :id => @content.id }  %></p>
+
+  <p><%= link_to 'Destroy', section_path(@content), method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </article>
+
+  <div class='clear'></div>
+
+</main>
