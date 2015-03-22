@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  match 'form/contact' => 'form#contact', via: [:get, :post]
+
+  get 'urls/url_get_params/:month/:day' => 'urls#url_get_params', as: :url
+
   #get 'sections/show' #, path: 'commentaries/sections'
 
   resources :sections

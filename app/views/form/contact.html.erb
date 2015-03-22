@@ -1,0 +1,21 @@
+<h1>Form#contact</h1>
+<p>Find me in app/views/form/contact.html.erb</p>
+
+<%= form_for form_contact_path, :method => "post" do %>
+  <%= label_tag(:name, 'your name') %><br>
+  <%= text_field_tag(:name, @name) %><br>
+  <%= label_tag(:email, 'your email') %><br>
+  <%= email_field_tag(:email, @email) %><br>
+
+  <%= submit_tag 'Submit' %>
+<% end %>
+
+<%= params.inspect %>
+<br>
+<% params.each do |k, v| %>
+  <%= "#{k} => #{v}"%><br>
+<% end %>
+
+
+<p><%= @name %></p>
+<p><%= @email %></p>
