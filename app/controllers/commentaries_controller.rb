@@ -6,7 +6,7 @@ class CommentariesController < ApplicationController
 
   def show
     @aside_navigation = Commentary.order(:position)
-    @content = Commentary.find(params[:id])
+    @content = Commentary.find_by_slug(params[:id])
     @sections = @content.sections.order(:position)
   end
 
@@ -24,11 +24,11 @@ class CommentariesController < ApplicationController
   end
 
   def edit
-    @commentary = Commentary.find(params[:id])
+    @commentary = Commentary.find_by_slug(params[:id])
   end
 
   def update
-    @commentary = Commentary.find(params[:id])
+    @commentary = Commentary.find_by_slug(params[:id])
     if @commentary.update(commentary_params)
       redirect_to action: :index
     else
@@ -37,13 +37,13 @@ class CommentariesController < ApplicationController
   end
 
   def destroy
-    @commentary = Commentary.find(params[:id])
+    @commentary = Commentary.find_by_slug(params[:id])
     @commentary.destroy
     redirect_to commentaries_path
   end
 
   private
   def commentary_params
-    params.require(:commentary).permit(:title, :position)
+    params.require(:commentary).permit(:title, :position, :slug)
   end
 end
