@@ -15,19 +15,34 @@
       </ul>
     </div>
   <% end %>
+
+  <script>
+  $(document).ready(function(){
+    $("#title").blur( function()
+      {
+        var bla = $('#title').val();
+        var blah =  bla.split(' ').join('-');
+        $('#slug').val(blah);
+      });
+  });
+
+  </script>
  
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+  <%= f.label :title %><br>
+  <%= f.text_field :title, :autofocus=>true, :id => 'title', :size=>"150" %>
  
   <p>
     <%= f.label :position %><br>
-    <%= f.text_field :position %>
+    <%= f.text_field :position, :size=>"150" %>
+  </p>
+
+  <p>
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug, disabled: true, id: "slug", :size=>"150" %>
   </p>
  
   <p>
-    <%= f.submit %>
+    <%= f.submit :id => 'button' %>
   </p>
 <% end %>
  
