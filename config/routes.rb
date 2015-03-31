@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   get 'pages/about_us'
 
   get 'pages/contact_us', path: 'cars/contact-taxworld-ireland'
+  post 'pages/contact_us', path: 'cars/contact-taxworld-ireland'
 
   get 'pages/calendar'
 
