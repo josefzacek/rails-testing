@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'people/index'
+
   match 'form/contact' => 'form#contact', via: [:get, :post]
 
   get 'urls/url_get_params/:month/:day' => 'urls#url_get_params', as: :url
