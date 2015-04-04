@@ -13,5 +13,12 @@ class PagesController < ApplicationController
   end
 
   def contact_us
+    submitted = params['commit']
+    if submitted
+      @name = params['name']
+      redirect_to :action => 'home'
+    else
+      @name = nil
+    end
   end
 end

@@ -1,2 +1,12 @@
 <h1>Pages#contact_us</h1>
 <p>Find me in app/views/pages/contact_us.html.erb</p>
+
+
+<% unless @name %>
+  <%= form_tag pages_contact_us_path, :method => 'post' do %>
+    <%= text_field_tag :name, @name %>
+    <%= submit_tag %>
+  <% end %>
+<% else %>
+  <%= @name %>
+<% end %>  

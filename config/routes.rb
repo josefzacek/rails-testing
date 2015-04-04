@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'people/index'
+
   match 'form/contact' => 'form#contact', via: [:get, :post]
 
   get 'urls/url_get_params/:month/:day' => 'urls#url_get_params', as: :url
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   get 'pages/about_us'
 
   get 'pages/contact_us', path: 'cars/contact-taxworld-ireland'
+  post 'pages/contact_us', path: 'cars/contact-taxworld-ireland'
 
   get 'pages/calendar'
 
