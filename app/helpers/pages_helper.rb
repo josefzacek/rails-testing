@@ -1,6 +1,6 @@
 module PagesHelper
-  def nav_link_to(text, action, url, style)
-    if action_name == action
+  def nav_link_to(text, controller, action, url, style)
+    if action_name == action && controller_name == controller
       link_to text, url, class: style
     else
       link_to text, url

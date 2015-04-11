@@ -1,13 +1,14 @@
 <ul>
-	<li><%= nav_link_to "home", 'home', pages_home_path, 'current-page' %></li>
-	<li><%= nav_link_to "calendar", 'calendar', pages_calendar_path, 'current-page' %></li>
-  <li><%= nav_link_to "people", 'index', people_index_path, 'current-page' %></li>
-	<li><%= nav_link_to "about", 'about_us',pages_about_us_path, 'current-page' %></li>
-  <li><%= nav_link_to "movies", 'index',movies_path, 'current-page' %></li>
-	<li><%= nav_link_to "contact", 'contact_us', pages_contact_us_path, 'current-page' %></li>
-  <li><%= nav_link_to 'show users and post', 'show', user_show_path, 'current-page' %></li>
-  <li><%= nav_link_to 'show posts', 'post_show', posts_post_show_path, 'current-page' %></li>
-  <li><%= nav_link_to 'commentaries', 'post_show', commentaries_path, 'current-page' %></li>
-  <li><%= nav_link_to 'get params from url', 'url_get_params', url_path(10,10), 'current-page' %></li>
-  <li><%= nav_link_to 'form', 'contact',form_contact_path, 'current-page' %></li>
+	<li><%= nav_link_to "home", 'pages', 'home', pages_home_path, 'current-page' %></li>
+  <li><%= nav_link_to "calendar",'pages', 'calendar', pages_calendar_path, 'current-page' %></li>
+  <li><%= nav_link_to "people",'people', 'index', people_index_path, 'current-page' %></li>
+  <li><%= nav_link_to "about",'pages', 'about_us',pages_about_us_path, 'current-page' %></li>
+  <li><%= nav_link_to "movies",'movies', 'index',movies_path, 'current-page' %></li>
+  <li><%= nav_link_to "contact",'pages', 'contact_us', pages_contact_us_path, 'current-page' %></li>
+  <li><%= nav_link_to 'show users and post','users', 'show', user_show_path, 'current-page' %></li>
+  <li><%= nav_link_to 'show posts','posts', 'post_show', posts_post_show_path, 'current-page' %></li>
+  <li><%= nav_link_to 'commentaries','commentaries', 'post_show', commentaries_path, 'current-page' %></li>
+  <li><%= nav_link_to 'get params from url','urls', 'url_get_params', url_path(10,10), 'current-page' %></li>
+  <li><%= nav_link_to 'form','forms', 'contact',form_contact_path, 'current-page' %></li>
+  <li><%= nav_link_to 'Animals(logic in model)', 'animals', 'index',animals_index_path, 'current-page' %></li>
 </ul>
