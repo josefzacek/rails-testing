@@ -1,6 +1,10 @@
 class Person < ActiveRecord::Base
   def full_name
-    name + ' ' + surname
+    if name && surname
+      "#{name} #{surname}"
+    else
+      'name or surname is missing'
+    end
   end
 
   def describe

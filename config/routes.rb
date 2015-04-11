@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :movies
+
   get 'people/index'
 
   match 'form/contact' => 'form#contact', via: [:get, :post]

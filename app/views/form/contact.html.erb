@@ -1,6 +1,10 @@
 <h1>Form#contact</h1>
 <p>Find me in app/views/form/contact.html.erb</p>
 
+<% if flash['error'] %>
+  <div class="error"> <%= flash['error'] %></div>
+<% end %>
+
 <%= form_for form_contact_path, :method => "post" do %>
   <%= label_tag(:name, 'your name') %><br>
   <%= text_field_tag(:name, @name) %><br>
