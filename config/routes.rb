@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contact_us_messages, only: [:new, :create], path: 'contact-us', :path_names => { :new => "" }
+
   get 'animals/index'
 
   resources :movies
