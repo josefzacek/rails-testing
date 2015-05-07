@@ -6,3 +6,46 @@
 <% @people.each do |person| %>
   <%= person.describe %></br>
 <% end %>
+
+
+<%= @people.inspect %>
+<%= @people.class %>
+
+
+<p><b>hash</b></p>
+<%= @hash.inspect %>
+<br>
+<% @hash.each do |k,v| %>
+  <%= "the key is: #{k} and has #{v} value" %></br>
+<% end %>
+<br>
+<% @hash.each_key do |k| %>
+  <%= k %></br>
+<% end %>
+<br>
+<% @hash.each_value do |v| %>
+  <%= v %></br>
+<% end %>
+<br>
+<%= @hash.class %>
+
+<p><b>array</b></p>
+<%= @array.inspect %>
+<br>
+<% @array.each do |person| %>
+  <%= person %></br>
+<% end %>
+<br>
+<%= @array.class %>
+
+<p><b>hash inside array</b></p>
+<%= @hash_inside_array.inspect %>
+<br>
+<% @hash_inside_array.each do |person| %>
+    <% person.each do |k,v| %>
+      <b><%= k %>:</b><br>
+      <%= v %><br>
+    <% end %></br>
+<% end %>
+<br>
+<%= @hash_inside_array.class %>
