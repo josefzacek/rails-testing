@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
-  resources :contact_us_messages, only: [:new, :create], path: 'contact-us', :path_names => { :new => "" }
+  resources :contact_us_messages,
+            only: [:new, :create],
+            path: 'contact-us', path_names: { new: '' }
 
   get 'animals/index'
 
   resources :movies
+
+  resources :polls
 
   get 'people/index'
 
@@ -11,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'urls/url_get_params/:month/:day' => 'urls#url_get_params', as: :url
 
-  #get 'sections/show' #, path: 'commentaries/sections'
+  # get 'sections/show' #, path: 'commentaries/sections'
 
   resources :sections
 
