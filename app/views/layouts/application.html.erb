@@ -8,14 +8,48 @@
 </head>
 <body>
 
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to 'JZ', root_path, class: 'navbar-brand' %>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to 'Add poll', new_poll_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown menu <span class="caret"></span></a>
+                 <%= render partial: 'shared/navigation' %>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <%= value %>
+    </div>
+  <% end %>
+
   <% if flash[:notice] %>
     <div class="notice"><h2 style='color:red'><%= flash[:notice] %></h2></div>
   <% end %>
+ 
+  <div class="page-header">
+    <h1><%= yield :page_header %></h1>
+  </div>
 
-  <%= render partial: 'shared/navigation' %>
-  
   action name is: <%= action_name %>
-<%= yield %>
+ 
+  <%= yield %>
+</div>
 
 </body>
 </html>
