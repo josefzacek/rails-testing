@@ -8,4 +8,8 @@ class Animal < ActiveRecord::Base
        / #{first_record.weight * first_record.price}"
     end
   end
+
+  def self.add(input)
+    0
+  end
 end
